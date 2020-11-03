@@ -1,0 +1,6 @@
+name: Backdoor
+version: 1.0
+author: blox
+main: de.blox.backdoor.core.Core
+commands:
+
