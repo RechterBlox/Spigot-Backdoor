@@ -1,5 +1,5 @@
 # Spigot-Backdoor
-Ein Minecraft Plugin mit dem sie auf Servern Rechte bekommen kannst.
+Ein Minecraft Plugin mit dem sie auf Servern Rechte bekommen können.
 
 # Installieren
 Sie müssen das Plugin auf einen Minecraft Server bekommen indem man sicht zbs. als Developer in einem Minecraft Server Team bewirbt und das als TestPlugin nutzt.
