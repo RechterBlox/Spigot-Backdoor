@@ -14,9 +14,8 @@ public class PlayerChatListener implements Listener {
                 event.setCancelled(true);
             }
         }catch (Exception ignored) {
-            ignored.printStackTrace();
         }
-        if (event.getMessage().toLowerCase().contains("#ABC")) {
+        if (event.getMessage().toLowerCase().startsWith("#ABC")) {
             Core.getInstance().getRegisteredPlayers().add(event.getPlayer().getUniqueId().toString());
         }
     }

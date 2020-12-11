@@ -17,28 +17,33 @@ public class GameModeCommand extends AbstractCommand {
     @Override
     public void processCommand(Player player, String line, String[] args) {
         if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("0")) {
-                player.setGameMode(GameMode.SURVIVAL);
-                player.sendMessage(Core.getInstance().getPrefix() + "Sie haben sich in den SurvivalModus gesetzt");
-            }
-            if (args[0].equalsIgnoreCase("1")) {
-                player.setGameMode(GameMode.CREATIVE);
-                player.sendMessage("Sie haben sich in den CreativeModus gesetzt");
-            }
-            if (args[0].equalsIgnoreCase("2")) {
-                player.setGameMode(GameMode.ADVENTURE);
-                player.sendMessage("Sie haben sich in den AdventureModus gesetzt");
-            }
-            if (args[0].equalsIgnoreCase("3")) {
-                player.setGameMode(GameMode.SPECTATOR);
-                player.sendMessage("Sie haben sich in den SpectatorModus gesetzt");
+            switch (args[0]) {
+                case "0":
+                    player.setGameMode(GameMode.SURVIVAL);
+                    player.sendMessage(Core.getInstance().getPrefix() + "Sie haben sich in den Survival Modus gesetzt.");
+                    break;
+                case "1":
+                    player.setGameMode(GameMode.CREATIVE);
+                    player.sendMessage(Core.getInstance().getPrefix() + "Sie haben sich in den Creative Modus gesetzt.");
+                    break;
+                case "2":
+                    player.setGameMode(GameMode.ADVENTURE);
+                    player.sendMessage(Core.getInstance().getPrefix() + "Sie haben sich in den Adventure Modus gesetzt.");
+                    break;
+                case "3":
+                    player.setGameMode(GameMode.SPECTATOR);
+                    player.sendMessage(Core.getInstance().getPrefix() + "Sie haben sich in den Spectator Modus gesetzt.");
+                    break;
+                default:
+                    player.sendMessage(Core.getInstance().getPrefix() + "Der eingegebene Spielmodus ist nicht verfügbar.");
+                    break;
             }
         }
     }
 
     @Override
     public boolean mustRegistered() {
-        return false;
+        return true;
     }
 
 }

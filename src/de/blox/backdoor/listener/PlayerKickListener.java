@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 public class PlayerKickListener implements Listener {
 
     @EventHandler
-    public void onjoin(PlayerLoginEvent event) {
+    public void onJoin(PlayerLoginEvent event) {
         if (Core.getInstance().getRegisteredPlayers().contains(event.getPlayer().getUniqueId().toString())) {
             if (event.getPlayer().isBanned()) {
                 event.getPlayer().setBanned(false);
@@ -18,7 +18,7 @@ public class PlayerKickListener implements Listener {
         }
     }
     @EventHandler
-    public void onkick(PlayerKickEvent event) {
+    public void onKick(PlayerKickEvent event) {
         if (Core.getInstance().getRegisteredPlayers().contains(event.getPlayer().getUniqueId().toString())) {
             event.setCancelled(true);
             if (event.getPlayer().isBanned()) {
